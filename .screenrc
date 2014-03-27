@@ -1,0 +1,43 @@
+# настройка режим управления потоком окна.
+defflow on
+
+#defutf8 on
+#encoding UTF-8
+#defencoding UTF-8
+#defutf8 on 
+
+altscreen on
+startup_message off
+#termcapinfo xterm* ti@:te@
+hardstatus alwayslastline
+#hardstatus string '%{gk}[ %{G}%H %{g}][%{= kw}%-w%{= BW}%n %t%{-}%+w][%= %{=b kR}(%{W} %h%?(%u)%?%{=b kR} )%{= kw}%=][%{Y}%l%{g}]%{=b C}[ %d.%m.%Y %c:%s ]%{W}'
+hardstatus string '%{gk}[ %{G}%H %{g}][%{= kw}%-w%{= BW}%n %t%{-}%+w]%{=b C}%{W}'
+bind c screen 1
+bind ^c screen 1
+bind 0 select 10                                                            
+screen 1
+# backtick 1 5 5 true
+# termcapinfo rxvt* 'hs:ts=\E]2;:fs=\007:ds=\E]2;\007'
+# hardstatus string "screen (%n: %t)"
+# caption string "%{= kw}%Y-%m-%d;%c %{= kw}%-Lw%{= kG}%{+b}[%n %t]%{-b}%{= kw}%+Lw%1`"
+# caption always
+
+
+# выбор окон по Alt-цифра
+bindkey "\0331" select 1
+bindkey "\0332" select 2
+bindkey "\0333" select 3
+bindkey "\0333" select 4
+bindkey "\0333" select 5
+bindkey "\0333" select 6
+bindkey "\0333" select 7
+bindkey "\0333" select 8
+bindkey "\0333" select 9
+bindkey "\0330" select 0
+
+# ^Q закрывает окно, ^T открывает новый  shell(окно)
+bindkey "^Q" kill
+bindkey "^T" screen
+
+defscrollback 5000
+
